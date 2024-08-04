@@ -1,24 +1,18 @@
 <odoo>
     <template id="sale_product_config_extension_1" inherit_id="sale_product_configurator.configure_optional_products">
         <xpath expr="//tbody/tr[2]" position="after">
-            <table class="table table-striped table-sm">
-                <thead>
-                    <tr>
-                        <th>Attribute Values</th>
-                        <th>On Hand Qty</th>
-                        <th>Forecasted Qty</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <t t-foreach="product_variants" t-as="product_variant">
-                        <tr>
-                            <td><t t-esc='product_variant["product_variant"]'/></td>
-                            <td><t t-esc="product_variant['qty']"/></td>
-                            <td><t t-esc="product_variant['forcasted_qty']"/></td>
-                        </tr>
-                    </t>
-                </tbody>
-            </table>
+            <tr>
+                <th colspan='2'>Attribute Values</th>
+                <th>On Hand Qty</th>
+                <th>Forecasted Qty</th>
+            </tr>
+            <t t-foreach="product_variants" t-as="product_variant">
+                <tr>
+                    <td colspan='2'><t t-esc='product_variant["product_variant"]'/></td>
+                    <td><t t-esc="product_variant['qty']"/></td>
+                    <td><t t-esc="product_variant['forcasted_qty']"/></td>
+                </tr>
+            </t>
         </xpath>
     </template>
 </odoo>
